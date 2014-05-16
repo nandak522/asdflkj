@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Random Text in One Click",
+  "description": "This extension prefills all text fields/text areas with random text like 'asdflkj'.",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs", "http://*/*"
+  ],
+  "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["js/content.js"],
+        "run_at": "document_start"
+      }
+  ],
+  "web_accessible_resources": ["js/inject.js"],
+  "icons": {
+      "512": "img/icon-512.png",
+      "128": "img/icon-128.png",
+      "20": "img/icon-20.png",
+      "48": "img/icon-48.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon-20.png"
+  },
+  "background":{
+    "page": "html/background.html"
+  }
+}
